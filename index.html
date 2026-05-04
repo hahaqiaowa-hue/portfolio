@@ -8,6 +8,20 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="single-page">
+  <div class="ambient-particles" aria-hidden="true">
+    <span class="ambient-particle"></span>
+    <span class="ambient-particle"></span>
+    <span class="ambient-particle"></span>
+    <span class="ambient-particle"></span>
+    <span class="ambient-particle"></span>
+    <span class="ambient-particle"></span>
+    <span class="ambient-particle"></span>
+    <span class="ambient-particle"></span>
+    <span class="ambient-particle"></span>
+    <span class="ambient-particle"></span>
+    <span class="ambient-particle"></span>
+    <span class="ambient-particle"></span>
+  </div>
   <header class="site-header">
     <a class="site-title" href="#top">Personal Portfolio</a>
     <nav class="site-nav">
@@ -16,7 +30,6 @@
       <a href="#project-03">03</a>
       <a href="#project-04">04</a>
       <a href="#project-05">05</a>
-      <a href="#project-06">06</a>
       <a href="#about">About</a>
     </nav>
   </header>
@@ -32,6 +45,7 @@
         <a class="cover-card cover-card-two" href="#project-02"><span>Project 02</span></a>
         <a class="cover-card cover-card-three" href="#project-03"><span>Project 03</span></a>
         <a class="cover-card cover-card-four" href="#project-04"><span>Project 04</span></a>
+        <a class="cover-card cover-card-five" href="#project-05"><span>Project 05</span></a>
       </div>
     </section>
 
@@ -120,15 +134,64 @@
           </article>
         </div>
       </div>
-      <div class="gallery-strip">
-        <div class="gallery-tile gallery-image-app-01 gallery-tile-phone"></div>
-        <div class="gallery-tile gallery-image-app-02 gallery-tile-phone"></div>
-        <div class="gallery-tile gallery-image-app-05 gallery-tile-phone"></div>
+      <div class="project-media-group project-02-media-group">
+        <div class="project-media-head">
+          <h3>Research &amp; User Needs</h3>
+        </div>
+        <figure class="project-media-figure project-media-figure-wide">
+          <img class="project-media-image project-02-research-image" src="assets/project-02-research-main.png" alt="Research map connecting elderly users’ daily needs with awareness, control, and participation points for the app experience.">
+          <figcaption class="project-media-caption">Mapping user needs into awareness, control, and participation points for the app experience.</figcaption>
+        </figure>
       </div>
-      <div class="gallery-strip">
-        <div class="gallery-tile gallery-image-app-08 gallery-tile-phone"></div>
-        <div class="gallery-tile gallery-image-project-04-app-10 gallery-tile-phone"></div>
-        <div class="gallery-tile gallery-image-project-04-app-03 gallery-tile-phone"></div>
+      <div class="project-media-group project-02-media-group">
+        <div class="project-media-head">
+          <h3>Key Screens</h3>
+        </div>
+        <div class="project-02-screens-row project-02-screens-row-primary">
+          <figure class="project-media-figure project-02-screen-card">
+            <div class="gallery-tile gallery-image-app-01 gallery-tile-phone"></div>
+            <figcaption class="project-media-caption">Welcome</figcaption>
+          </figure>
+          <figure class="project-media-figure project-02-screen-card">
+            <div class="gallery-tile gallery-image-app-02 gallery-tile-phone"></div>
+            <figcaption class="project-media-caption">Micro-Decision</figcaption>
+          </figure>
+          <figure class="project-media-figure project-02-screen-card">
+            <div class="gallery-tile gallery-image-app-05 gallery-tile-phone"></div>
+            <figcaption class="project-media-caption">Contacts</figcaption>
+          </figure>
+        </div>
+        <div class="project-02-screens-row project-02-screens-row-secondary">
+          <figure class="project-media-figure project-02-screen-card">
+            <div class="gallery-tile gallery-image-project-04-app-03 gallery-tile-phone"></div>
+            <figcaption class="project-media-caption">Room plan mode</figcaption>
+          </figure>
+          <figure class="project-media-figure project-02-screen-card">
+            <div class="gallery-tile gallery-image-app-08 gallery-tile-phone"></div>
+            <figcaption class="project-media-caption">Memory feed</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="project-media-group project-02-media-group">
+        <div class="project-media-head">
+          <h3>Spatial Navigation</h3>
+        </div>
+        <div class="project-02-spatial-layout">
+          <figure class="project-media-figure project-media-figure-feature">
+            <div class="gallery-tile gallery-image-project-04-app-10 gallery-tile-spatial-feature"></div>
+            <figcaption class="project-media-caption">Navigation map</figcaption>
+          </figure>
+          <div class="project-02-spatial-support">
+            <figure class="project-media-figure">
+              <div class="gallery-tile gallery-image-app-07 gallery-tile-spatial-support"></div>
+              <figcaption class="project-media-caption">Room scan</figcaption>
+            </figure>
+            <figure class="project-media-figure">
+              <div class="gallery-tile gallery-image-app-04 gallery-tile-spatial-support"></div>
+              <figcaption class="project-media-caption">3D room view</figcaption>
+            </figure>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -138,9 +201,12 @@
         <h2>VR Experience</h2>
         <p class="section-meta">VR / Spatial Interaction / 2024</p>
       </div>
+      <div class="project-media-head project-03-media-head">
+        <h3>Hero / Key Visual</h3>
+      </div>
       <div class="project-cover project-cover-perspective" data-depth-scene>
         <div class="project-cover-frame">
-          <img class="project-cover-image" src="assets/vr-final.png" alt="VR project montage preview">
+          <img class="project-cover-image" src="assets/vr-final.jpg" alt="VR project montage preview">
         </div>
         <div class="project-cover-overlay" aria-hidden="true"></div>
       </div>
@@ -163,10 +229,46 @@
           </article>
         </div>
       </div>
-      <div class="gallery-strip">
-        <div class="gallery-tile gallery-image-shot-06"></div>
-        <div class="gallery-tile gallery-image-shot-03"></div>
-        <div class="gallery-tile gallery-image-shot-tpose"></div>
+      <div class="project-03-case-study">
+        <section class="project-03-media-group">
+          <div class="project-media-head project-03-media-head">
+            <h3>Environment Setup</h3>
+          </div>
+          <div class="project-03-environment-grid">
+            <figure class="project-03-media-figure">
+              <div class="gallery-tile gallery-image-shot-06"></div>
+              <figcaption class="project-03-media-caption">Environment overview.</figcaption>
+            </figure>
+            <figure class="project-03-media-figure">
+              <div class="gallery-tile gallery-image-shot-03"></div>
+              <figcaption class="project-03-media-caption">In-world avatar staging.</figcaption>
+            </figure>
+          </div>
+        </section>
+        <section class="project-03-media-group">
+          <div class="project-media-head project-03-media-head">
+            <h3>Embodied Interaction</h3>
+          </div>
+          <figure class="project-03-media-figure project-03-interaction-figure">
+            <div class="gallery-tile gallery-image-shot-tpose"></div>
+            <figcaption class="project-03-media-caption">First-person interaction view.</figcaption>
+          </figure>
+        </section>
+        <section class="project-03-media-group">
+          <div class="project-media-head project-03-media-head">
+            <h3>Character Model</h3>
+          </div>
+          <div class="project-03-model-grid">
+            <figure class="project-03-media-figure">
+              <div class="gallery-tile gallery-image-project-03-extra-morphing"></div>
+              <figcaption class="project-03-media-caption">Avatar model development.</figcaption>
+            </figure>
+            <figure class="project-03-media-figure">
+              <div class="gallery-tile gallery-image-project-03-extra-tpose"></div>
+              <figcaption class="project-03-media-caption">T-pose and reach study.</figcaption>
+            </figure>
+          </div>
+        </section>
       </div>
     </section>
 
@@ -227,54 +329,28 @@
           </article>
         </div>
       </div>
-      <div class="gallery-strip gallery-strip-single">
+      <div class="project-05-media">
         <div class="gallery-tile gallery-image-project-05-main gallery-tile-wide"></div>
       </div>
-      <div class="gallery-strip">
-        <div class="gallery-tile gallery-image-project-05-extra-01"></div>
-        <div class="gallery-tile gallery-image-project-05-extra-02"></div>
-        <div class="gallery-tile gallery-image-project-05-extra-03"></div>
-      </div>
-    </section>
-
-    <section class="project-section project-section-compact" id="project-06">
-      <div class="section-head">
-        <p class="section-index">06</p>
-        <h2>AI-Assisted Game Character Design</h2>
-        <p class="section-meta">Character Design / AI-Assisted Workflow / Visual Development / 2025</p>
-      </div>
-      <div class="project-layout">
-        <div class="project-summary">
-          这个项目聚焦 AI 辅助游戏角色设计，结合角色关系、风格探索与造型测试，呈现从概念构思到视觉定稿的过程。
+      <div class="project-05-detail-block">
+        <div class="project-05-detail-images">
+          <figure class="project-05-detail-figure">
+            <div class="gallery-tile gallery-image-project-05-extra-01"></div>
+            <figcaption class="project-05-detail-caption">Storage components and tower details.</figcaption>
+          </figure>
+          <figure class="project-05-detail-figure">
+            <div class="gallery-tile gallery-image-project-05-extra-02"></div>
+            <figcaption class="project-05-detail-caption">Loose drive elements and suspended parts.</figcaption>
+          </figure>
+          <figure class="project-05-detail-figure">
+            <div class="gallery-tile gallery-image-project-05-extra-03"></div>
+            <figcaption class="project-05-detail-caption">Wall-mounted objects and observation cues.</figcaption>
+          </figure>
         </div>
-        <div class="detail-grid">
-          <article class="detail-card">
-            <h3>Focus</h3>
-            <p>围绕角色性格、家族关系与视觉辨识度，建立适合游戏叙事的角色设定方向。</p>
-          </article>
-          <article class="detail-card">
-            <h3>Process</h3>
-            <p>通过手绘草图、风格测试与 AI 辅助生成，逐步探索角色造型、服装、配色与表情语言。</p>
-          </article>
-          <article class="detail-card">
-            <h3>Result</h3>
-            <p>最终输出包括角色概念图、风格探索图与阶段性视觉方案，展示 AI 辅助角色设计的工作流程。</p>
-          </article>
-        </div>
-      </div>
-      <div class="project-06-media">
-        <div class="project-06-main-card">
-          <div class="project-06-top-grid">
-            <div class="gallery-tile gallery-image-project-06-extra-04"></div>
-            <div class="gallery-tile gallery-image-project-06-extra-03"></div>
-            <div class="gallery-tile gallery-image-project-06-extra-05"></div>
-          </div>
-          <div class="gallery-tile gallery-image-project-06-main project-06-feature"></div>
-        </div>
-        <div class="project-06-side-grid">
-          <div class="gallery-tile gallery-image-project-06-extra-01"></div>
-          <div class="gallery-tile gallery-image-project-06-extra-02"></div>
-        </div>
+        <aside class="detail-card project-05-detail-panel">
+          <h3>Scene Details</h3>
+          <p>Close-up views of repair-related objects, showing how scale, material contrast, and visual cues support object observation in the VR workspace.</p>
+        </aside>
       </div>
     </section>
 

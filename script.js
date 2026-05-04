@@ -6,11 +6,7 @@ const projectTwo = document.querySelector("#project-02");
 const projectThree = document.querySelector("#project-03");
 const projectFour = document.querySelector("#project-04");
 const projectFive = document.querySelector("#project-05");
-const projectSix = document.querySelector("#project-06");
 const aboutSection = document.querySelector("#about .about-copy");
-
-const depthScenes = document.querySelectorAll("[data-depth-scene]");
-const tiltLiteScenes = document.querySelectorAll("[data-tilt-lite]");
 
 if (frameLabel) frameLabel.remove();
 if (heroNote) heroNote.remove();
@@ -110,74 +106,52 @@ if (projectFive) {
   }
 }
 
-if (projectSix) {
-  const summary = projectSix.querySelector(".project-summary");
-  const cards = projectSix.querySelectorAll(".detail-card p");
-
-  if (summary) {
-    summary.textContent =
-      "这个项目聚焦 AI 辅助游戏角色设计，结合角色关系、风格探索与造型测试，呈现从概念构思到视觉定稿的过程。";
-  }
-
-  if (cards.length >= 3) {
-    cards[0].textContent =
-      "围绕角色性格、家族关系与视觉辨识度，建立适合游戏叙事的角色设定方向。";
-    cards[1].textContent =
-      "通过手绘草图、风格测试与 AI 辅助生成，逐步探索角色造型、服装、配色与表情语言。";
-    cards[2].textContent =
-      "最终输出包括角色概念图、风格探索图与阶段性视觉方案，展示 AI 辅助角色设计的工作流程。";
-  }
-}
-
 if (aboutSection) {
   aboutSection.textContent =
     "这里可以替换成个人介绍、创作方向、学校或工作状态以及联系方式。当前页面是单页滚动作品集，适合从上到下完整浏览。";
 }
 
-depthScenes.forEach((scene) => {
-  const resetScene = () => {
-    scene.style.setProperty("--bg-shift-x", "0px");
-    scene.style.setProperty("--bg-shift-y", "0px");
-    scene.style.setProperty("--glow-x", "50%");
-    scene.style.setProperty("--glow-y", "50%");
-  };
+const revealTargets = document.querySelectorAll(
+  [
+    ".hero-heading",
+    ".cover-card",
+    ".project-section .section-head",
+    ".project-cover",
+    ".project-summary",
+    ".detail-card",
+    ".project-01-side-mini",
+    ".project-01-side-image",
+    ".storyboard-panel",
+    ".storyboard-shot",
+    ".gallery-tile",
+    ".about-copy"
+  ].join(", ")
+);
 
-  resetScene();
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  scene.addEventListener("pointermove", (event) => {
-    const rect = scene.getBoundingClientRect();
-    const px = (event.clientX - rect.left) / rect.width;
-    const py = (event.clientY - rect.top) / rect.height;
-    const shiftX = (px - 0.5) * -18;
-    const shiftY = (py - 0.5) * -14;
-
-    scene.style.setProperty("--bg-shift-x", `${shiftX}px`);
-    scene.style.setProperty("--bg-shift-y", `${shiftY}px`);
-    scene.style.setProperty("--glow-x", `${px * 100}%`);
-    scene.style.setProperty("--glow-y", `${py * 100}%`);
+if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+  revealTargets.forEach((target) => {
+    target.classList.add("reveal-on-scroll", "is-visible");
   });
+} else {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.14,
+      rootMargin: "0px 0px -8% 0px"
+    }
+  );
 
-  scene.addEventListener("pointerleave", resetScene);
-});
-
-tiltLiteScenes.forEach((scene) => {
-  const resetTilt = () => {
-    scene.style.setProperty("--tilt-x", "0deg");
-    scene.style.setProperty("--tilt-y", "0deg");
-  };
-
-  resetTilt();
-
-  scene.addEventListener("pointermove", (event) => {
-    const rect = scene.getBoundingClientRect();
-    const px = (event.clientX - rect.left) / rect.width;
-    const py = (event.clientY - rect.top) / rect.height;
-    const tiltY = (px - 0.5) * 3.2;
-    const tiltX = (0.5 - py) * 2.6;
-
-    scene.style.setProperty("--tilt-x", `${tiltX}deg`);
-    scene.style.setProperty("--tilt-y", `${tiltY}deg`);
+  revealTargets.forEach((target, index) => {
+    target.classList.add("reveal-on-scroll");
+    target.style.setProperty("--reveal-delay", `${Math.min(index * 24, 180)}ms`);
+    revealObserver.observe(target);
   });
-
-  scene.addEventListener("pointerleave", resetTilt);
-});
+}
