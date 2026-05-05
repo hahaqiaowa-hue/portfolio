@@ -1,45 +1,29 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Personal Portfolio</title>
-  <meta name="description" content="极简风格单页滚动作品集">
+  <meta name="description" content="Personal portfolio website">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="single-page">
   <div class="ambient-particles" aria-hidden="true">
-    <span class="ambient-particle"></span>
-    <span class="ambient-particle"></span>
-    <span class="ambient-particle"></span>
-    <span class="ambient-particle"></span>
-    <span class="ambient-particle"></span>
-    <span class="ambient-particle"></span>
-    <span class="ambient-particle"></span>
-    <span class="ambient-particle"></span>
-    <span class="ambient-particle"></span>
-    <span class="ambient-particle"></span>
-    <span class="ambient-particle"></span>
-    <span class="ambient-particle"></span>
+    <span class="ambient-particle"></span><span class="ambient-particle"></span><span class="ambient-particle"></span><span class="ambient-particle"></span>
+    <span class="ambient-particle"></span><span class="ambient-particle"></span><span class="ambient-particle"></span><span class="ambient-particle"></span>
+    <span class="ambient-particle"></span><span class="ambient-particle"></span><span class="ambient-particle"></span><span class="ambient-particle"></span>
   </div>
+
   <header class="site-header">
     <a class="site-title" href="#top">Personal Portfolio</a>
     <nav class="site-nav">
-      <a href="#project-01">01</a>
-      <a href="#project-02">02</a>
-      <a href="#project-03">03</a>
-      <a href="#project-04">04</a>
-      <a href="#project-05">05</a>
-      <a href="#about">About</a>
+      <a href="#project-01">01</a><a href="#project-02">02</a><a href="#project-03">03</a><a href="#project-04">04</a><a href="#project-05">05</a>
     </nav>
   </header>
 
   <main class="page-shell" id="top">
     <section class="hero-sheet">
-      <div class="hero-heading">
-        <h1>Personal<br>Portfolio</h1>
-      </div>
-
+      <div class="hero-heading"><h1>Personal<br>Portfolio</h1></div>
       <div class="cover-grid" aria-label="精选项目预览">
         <a class="cover-card cover-card-one" href="#project-01"><span>Project 01</span></a>
         <a class="cover-card cover-card-two" href="#project-02"><span>Project 02</span></a>
@@ -61,41 +45,30 @@
         <div class="project-cover-bg-orb bg-orb-03" aria-hidden="true"></div>
         <img class="project-cover-static-image" src="assets/project-01-route-base.png" alt="Project 01 route analysis diagram preview">
       </div>
-      <div class="project-layout">
-        <div class="project-summary">
-          这个项目从文化调研出发，把场景、人物、仪式和空间关系整理成一套可视化叙事，并进一步发展为 AI 概念视频的前期世界观设定。
+      <div class="project-layout project-01-text-layout">
+        <div class="project-overview-block">
+          <p class="project-overview-label">Project Overview</p>
+          <p class="project-summary project-01-summary-en">
+            Inspired by Tibetan culture, this VR project lets users experience cultural events such as horse racing, sutra printing, and ritual ceremonies in an immersive virtual environment, creating an interactive visual narrative.
+          </p>
         </div>
-        <div class="detail-grid">
-          <article class="detail-card">
-            <h3>Overview</h3>
-            <p>以文化调研为基础，提取地景、活动、角色和叙事节点，并把它们组织成可被观看和扩展的视觉系统。</p>
-          </article>
-          <article class="detail-card">
-            <h3>Approach</h3>
-            <p>通过路线分析、空间分区、场景设定和角色编排，把研究内容转译成适合后续影像发展的概念图谱。</p>
-          </article>
-          <article class="detail-card">
-            <h3>Outcome</h3>
-            <p>最终输出不仅是调研图和叙事框架，也为后续 AI 概念视频提供了镜头语言、场景结构和视觉方向。</p>
-          </article>
+        <div class="project-core-block">
+          <p class="project-overview-label">Core Elements</p>
+          <ul class="project-core-list" aria-label="Project 01 core elements">
+            <li>Cultural scenes &amp; characters</li>
+            <li>VR interactive experience</li>
+            <li>Early-stage visuals for AI concept video</li>
+          </ul>
         </div>
       </div>
       <div class="project-01-media-row">
         <div class="project-01-left-mini-grid">
-          <figure class="project-01-side-mini">
-            <img src="assets/project-01-extra-00-intro.png" alt="Project 01 intro frame">
-          </figure>
-          <figure class="project-01-side-mini">
-            <img src="assets/project-01-extra-01.png" alt="Project 01 extra frame 01">
-          </figure>
-          <figure class="project-01-side-mini">
-            <img src="assets/project-01-extra-02.png" alt="Project 01 extra frame 02">
-          </figure>
+          <figure class="project-01-side-mini"><img src="assets/project-01-extra-00-intro.png" alt="Project 01 intro frame"></figure>
+          <figure class="project-01-side-mini"><img src="assets/project-01-extra-01.png" alt="Project 01 extra frame 01"></figure>
+          <figure class="project-01-side-mini"><img src="assets/project-01-extra-02.png" alt="Project 01 extra frame 02"></figure>
         </div>
         <div class="project-01-right-stack">
-          <figure class="project-01-side-image">
-            <img src="assets/project-01-side-horse.png" alt="Golden horse concept image">
-          </figure>
+          <figure class="project-01-side-image"><img src="assets/project-01-side-horse.png" alt="Golden horse concept image"></figure>
           <div class="storyboard-panel" aria-label="Project 01 storyboard">
             <p class="storyboard-label">Storyboard</p>
             <div class="storyboard-scroll">
@@ -115,80 +88,57 @@
         <h2>AR Care Companion App Design</h2>
         <p class="section-meta">Mobile App / AR Interaction / UX UI / Voice Interaction / Family Care / 2025</p>
       </div>
-      <div class="project-layout">
-        <div class="project-summary">
-          这个项目是一个结合 AR 空间识别与移动端交互的关怀型 App 设计，面向老年人与家庭成员的日常陪伴、记忆辅助和家庭沟通需求。
+      <div class="project-layout project-02-text-layout">
+        <div class="project-overview-block">
+          <p class="project-overview-label">Project Overview</p>
+          <p class="project-summary project-02-summary-en">
+            EchoMe is an AR-based mobile system designed to help older adults regain spatial awareness, agency, and daily participation at home. The app uses AR to scan the home environment, supports micro-decisions, and allows family members to share memories, revisit photos, and interact digitally in a shared emotional space.
+          </p>
         </div>
-        <div class="detail-grid">
-          <article class="detail-card">
-            <h3>Challenge</h3>
-            <p>如何将 AR 空间识别、语音交互和家庭沟通功能整合进一个适合老年用户的移动端关怀体验。</p>
-          </article>
-          <article class="detail-card">
-            <h3>Design Move</h3>
-            <p>通过 AR 家庭空间导航、语音快速提问、生活记录、家人联系和微决策辅助等模块，将复杂的照护需求转化为清晰的日常使用场景。</p>
-          </article>
-          <article class="detail-card">
-            <h3>Delivery</h3>
-            <p>最终输出包括核心 App 页面、AR 交互界面、高保真 UI、功能流程和视觉系统，展示了一个结合 AR 与家庭关怀的移动端产品概念。</p>
-          </article>
+        <div class="project-core-block">
+          <p class="project-overview-label">Core Elements</p>
+          <ul class="project-core-list project-02-core-list" aria-label="Project 02 core elements">
+            <li>AR spatial recognition for daily interactions</li>
+            <li>Micro-decision and social participation modules</li>
+            <li>Family memory sharing and emotional connection</li>
+          </ul>
         </div>
       </div>
       <div class="project-media-group project-02-media-group">
-        <div class="project-media-head">
-          <h3>Research &amp; User Needs</h3>
-        </div>
+        <div class="project-media-head"><h3>Research &amp; User Needs</h3></div>
         <figure class="project-media-figure project-media-figure-wide">
-          <img class="project-media-image project-02-research-image" src="assets/project-02-research-main.png" alt="Research map connecting elderly users’ daily needs with awareness, control, and participation points for the app experience.">
+          <img class="project-media-image project-02-research-image" src="assets/project-02-research-main.png" alt="Research map connecting daily needs with awareness, control, and participation points.">
           <figcaption class="project-media-caption">Mapping user needs into awareness, control, and participation points for the app experience.</figcaption>
         </figure>
       </div>
       <div class="project-media-group project-02-media-group">
-        <div class="project-media-head">
-          <h3>Key Screens</h3>
-        </div>
-        <div class="project-02-screens-row project-02-screens-row-primary">
-          <figure class="project-media-figure project-02-screen-card">
-            <div class="gallery-tile gallery-image-app-01 gallery-tile-phone"></div>
-            <figcaption class="project-media-caption">Welcome</figcaption>
-          </figure>
-          <figure class="project-media-figure project-02-screen-card">
-            <div class="gallery-tile gallery-image-app-02 gallery-tile-phone"></div>
-            <figcaption class="project-media-caption">Micro-Decision</figcaption>
-          </figure>
-          <figure class="project-media-figure project-02-screen-card">
-            <div class="gallery-tile gallery-image-app-05 gallery-tile-phone"></div>
-            <figcaption class="project-media-caption">Contacts</figcaption>
-          </figure>
-        </div>
-        <div class="project-02-screens-row project-02-screens-row-secondary">
-          <figure class="project-media-figure project-02-screen-card">
-            <div class="gallery-tile gallery-image-project-04-app-03 gallery-tile-phone"></div>
-            <figcaption class="project-media-caption">Room plan mode</figcaption>
-          </figure>
-          <figure class="project-media-figure project-02-screen-card">
-            <div class="gallery-tile gallery-image-app-08 gallery-tile-phone"></div>
-            <figcaption class="project-media-caption">Memory feed</figcaption>
-          </figure>
+        <div class="project-media-head"><h3>Key Screens</h3></div>
+        <div class="project-02-screens-row project-02-screens-row-primary project-02-screens-row-six">
+          <figure class="project-media-figure project-02-screen-card"><div class="gallery-tile gallery-image-app-01 gallery-tile-phone"></div><figcaption class="project-media-caption">Welcome</figcaption></figure>
+          <figure class="project-media-figure project-02-screen-card"><div class="gallery-tile gallery-image-app-02 gallery-tile-phone"></div><figcaption class="project-media-caption">Micro-Decision</figcaption></figure>
+          <figure class="project-media-figure project-02-screen-card"><div class="gallery-tile gallery-image-app-05 gallery-tile-phone"></div><figcaption class="project-media-caption">Contacts</figcaption></figure>
+          <figure class="project-media-figure project-02-screen-card"><div class="gallery-tile gallery-image-project-04-app-03 gallery-tile-phone"></div><figcaption class="project-media-caption">Room plan mode</figcaption></figure>
+          <figure class="project-media-figure project-02-screen-card"><div class="gallery-tile gallery-image-app-08 gallery-tile-phone"></div><figcaption class="project-media-caption">Memory feed</figcaption></figure>
+          <figure class="project-media-figure project-02-screen-card"><div class="gallery-tile gallery-image-project-04-app-10 gallery-tile-phone"></div><figcaption class="project-media-caption">Navigation map</figcaption></figure>
         </div>
       </div>
       <div class="project-media-group project-02-media-group">
-        <div class="project-media-head">
-          <h3>Spatial Navigation</h3>
-        </div>
-        <div class="project-02-spatial-layout">
-          <figure class="project-media-figure project-media-figure-feature">
-            <div class="gallery-tile gallery-image-project-04-app-10 gallery-tile-spatial-feature"></div>
-            <figcaption class="project-media-caption">Navigation map</figcaption>
+        <div class="project-media-head"><h3>Spatial Navigation</h3></div>
+        <div class="project-02-spatial-layout project-02-spatial-layout-custom">
+          <figure class="project-media-figure project-02-spatial-main-card">
+            <img class="project-02-spatial-main-image" src="assets/App.png" alt="Spatial navigation main view">
+            <figcaption class="project-media-caption">Main spatial map view</figcaption>
           </figure>
-          <div class="project-02-spatial-support">
-            <figure class="project-media-figure">
-              <div class="gallery-tile gallery-image-app-07 gallery-tile-spatial-support"></div>
-              <figcaption class="project-media-caption">Room scan</figcaption>
+          <div class="project-02-spatial-support-row">
+            <figure class="project-media-figure project-02-spatial-support-card">
+              <p class="project-02-step-label">Step 1</p>
+              <img class="project-02-spatial-support-image" src="assets/019.png" alt="Spatial navigation support view 1">
+              <figcaption class="project-media-caption">AR recognition and room anchoring</figcaption>
             </figure>
-            <figure class="project-media-figure">
-              <div class="gallery-tile gallery-image-app-04 gallery-tile-spatial-support"></div>
-              <figcaption class="project-media-caption">3D room view</figcaption>
+            <figure class="project-media-figure project-02-spatial-support-card">
+              <p class="project-02-step-label">Step 2</p>
+              <img class="project-02-spatial-support-image" src="assets/020.png" alt="Spatial navigation support view 2">
+              <figcaption class="project-media-caption">AR overlay and guided interaction</figcaption>
             </figure>
           </div>
         </div>
@@ -201,72 +151,45 @@
         <h2>VR Experience</h2>
         <p class="section-meta">VR / Spatial Interaction / 2024</p>
       </div>
-      <div class="project-media-head project-03-media-head">
-        <h3>Hero / Key Visual</h3>
-      </div>
+      <div class="project-media-head project-03-media-head"><h3>Hero / Key Visual</h3></div>
       <div class="project-cover project-cover-perspective" data-depth-scene>
-        <div class="project-cover-frame">
-          <img class="project-cover-image" src="assets/vr-final.jpg" alt="VR project montage preview">
-        </div>
+        <div class="project-cover-frame"><img class="project-cover-image" src="assets/vr-final.jpg" alt="VR project montage preview"></div>
         <div class="project-cover-overlay" aria-hidden="true"></div>
       </div>
-      <div class="project-layout">
-        <div class="project-summary">
-          这里放入了 VR 项目的场景和截图，用来展示空间叙事、沉浸氛围与角色关系的表达方式。
+      <div class="project-layout project-03-text-layout">
+        <div class="project-overview-block">
+          <p class="project-overview-label">Morphing Mirror</p>
+          <p class="project-overview-label">Project Overview</p>
+          <p class="project-summary project-03-summary-en">
+            Morphing Mirror is an immersive VR artwork where users see their virtual avatar in a mirror that continuously morphs with their body movements. The experience emphasizes embodied feedback and performativity, allowing participants to explore how algorithmic judgment operates through subtle, real-time body transformation.
+          </p>
         </div>
-        <div class="detail-grid">
-          <article class="detail-card">
-            <h3>Theme</h3>
-            <p>围绕空间、角色和观看路径建立具有沉浸感的虚拟场景。</p>
-          </article>
-          <article class="detail-card">
-            <h3>Medium</h3>
-            <p>通过场景搭建、角色编排与镜头测试形成完整的视觉体验方向。</p>
-          </article>
-          <article class="detail-card">
-            <h3>Presentation</h3>
-            <p>最终呈现为一组 VR 场景截图和体验片段，强调空间感与叙事感。</p>
-          </article>
+        <div class="project-core-block">
+          <p class="project-overview-label">Core Elements</p>
+          <ul class="project-core-list project-03-core-list" aria-label="Project 03 core elements">
+            <li>Mirror-based avatar morphing</li>
+            <li>Real-time VR interaction</li>
+            <li>Exploration of algorithmic and bodily feedback</li>
+          </ul>
         </div>
       </div>
       <div class="project-03-case-study">
         <section class="project-03-media-group">
-          <div class="project-media-head project-03-media-head">
-            <h3>Environment Setup</h3>
-          </div>
+          <div class="project-media-head project-03-media-head"><h3>Environment Setup</h3></div>
           <div class="project-03-environment-grid">
-            <figure class="project-03-media-figure">
-              <div class="gallery-tile gallery-image-shot-06"></div>
-              <figcaption class="project-03-media-caption">Environment overview.</figcaption>
-            </figure>
-            <figure class="project-03-media-figure">
-              <div class="gallery-tile gallery-image-shot-03"></div>
-              <figcaption class="project-03-media-caption">In-world avatar staging.</figcaption>
-            </figure>
+            <figure class="project-03-media-figure"><div class="gallery-tile gallery-image-shot-06"></div><figcaption class="project-03-media-caption">Environment overview.</figcaption></figure>
+            <figure class="project-03-media-figure"><div class="gallery-tile gallery-image-shot-03"></div><figcaption class="project-03-media-caption">In-world avatar staging.</figcaption></figure>
           </div>
         </section>
         <section class="project-03-media-group">
-          <div class="project-media-head project-03-media-head">
-            <h3>Embodied Interaction</h3>
-          </div>
-          <figure class="project-03-media-figure project-03-interaction-figure">
-            <div class="gallery-tile gallery-image-shot-tpose"></div>
-            <figcaption class="project-03-media-caption">First-person interaction view.</figcaption>
-          </figure>
+          <div class="project-media-head project-03-media-head"><h3>Embodied Interaction</h3></div>
+          <figure class="project-03-media-figure project-03-interaction-figure"><div class="gallery-tile gallery-image-shot-tpose"></div><figcaption class="project-03-media-caption">First-person interaction view.</figcaption></figure>
         </section>
         <section class="project-03-media-group">
-          <div class="project-media-head project-03-media-head">
-            <h3>Character Model</h3>
-          </div>
+          <div class="project-media-head project-03-media-head"><h3>Character Model</h3></div>
           <div class="project-03-model-grid">
-            <figure class="project-03-media-figure">
-              <div class="gallery-tile gallery-image-project-03-extra-morphing"></div>
-              <figcaption class="project-03-media-caption">Avatar model development.</figcaption>
-            </figure>
-            <figure class="project-03-media-figure">
-              <div class="gallery-tile gallery-image-project-03-extra-tpose"></div>
-              <figcaption class="project-03-media-caption">T-pose and reach study.</figcaption>
-            </figure>
+            <figure class="project-03-media-figure"><div class="gallery-tile gallery-image-project-03-extra-morphing"></div><figcaption class="project-03-media-caption">Avatar model development.</figcaption></figure>
+            <figure class="project-03-media-figure"><div class="gallery-tile gallery-image-project-03-extra-tpose"></div><figcaption class="project-03-media-caption">T-pose and reach study.</figcaption></figure>
           </div>
         </section>
       </div>
@@ -278,23 +201,20 @@
         <h2>Virtual Album Space</h2>
         <p class="section-meta">Spatial Archive / Virtual Exhibition / 2024</p>
       </div>
-      <div class="project-layout">
-        <div class="project-summary">
-          这个项目以虚拟相册空间为核心，将家庭照片、书架、漂浮物件和空间装置组合成一个可以被进入和观看的记忆场景。
+      <div class="project-layout project-04-text-layout">
+        <div class="project-overview-block">
+          <p class="project-overview-label">Project Overview</p>
+          <p class="project-summary project-04-summary-en">
+            A VR "memory space" where users can revisit and organize family photos in a shared virtual environment. Multiple participants can enter the space simultaneously and interactively decorate and explore the room together.
+          </p>
         </div>
-        <div class="detail-grid">
-          <article class="detail-card">
-            <h3>Concept</h3>
-            <p>通过把相册从平面物件转化成可进入的空间，重新组织照片、记忆和观看关系。</p>
-          </article>
-          <article class="detail-card">
-            <h3>Space</h3>
-            <p>空间里结合了书架、照片装置和漂浮物件，让档案感和沉浸感同时存在。</p>
-          </article>
-          <article class="detail-card">
-            <h3>Experience</h3>
-            <p>观者像在记忆内部移动，而不是只浏览图片本身，使项目更接近一种叙事式展览。</p>
-          </article>
+        <div class="project-core-block">
+          <p class="project-overview-label">Core Elements</p>
+          <ul class="project-core-list project-04-core-list" aria-label="Project 04 core elements">
+            <li>Shared VR memory space for family photos</li>
+            <li>Interactive spatial decoration</li>
+            <li>Multi-user collaboration</li>
+          </ul>
         </div>
       </div>
       <div class="gallery-strip gallery-strip-wide">
@@ -308,60 +228,37 @@
       <div class="section-head">
         <p class="section-index">05</p>
         <h2>VR Phone Repair</h2>
-        <p class="section-meta">VR Interaction / Small Project / 2024</p>
+        <p class="section-meta">VR Interaction / Small Project / 2025</p>
       </div>
-      <div class="project-layout">
-        <div class="project-summary">
-          这是一个以修手机为主题的轻量 VR 项目，重点展示场景搭建、物件观察和基础交互尝试。
+      <div class="project-layout project-05-text-layout">
+        <div class="project-overview-block">
+          <p class="project-overview-label">Project Overview</p>
+          <p class="project-summary project-05-summary-en">
+            This lightweight VR project focuses on mobile phone repair, highlighting scene setup, object observation, basic user interactions, and subtle environmental animations to enhance immersion.
+          </p>
         </div>
-        <div class="detail-grid">
-          <article class="detail-card">
-            <h3>Idea</h3>
-            <p>以维修工作台为核心，模拟用户进入一个与电子设备维护相关的虚拟操作场景。</p>
-          </article>
-          <article class="detail-card">
-            <h3>Scene</h3>
-            <p>通过桌面、显示器、座椅和设备陈设建立一个带有工作室感的空间氛围。</p>
-          </article>
-          <article class="detail-card">
-            <h3>Focus</h3>
-            <p>作为小项目，它更适合展示交互尝试和场景表达，而不是展开成长篇案例。</p>
-          </article>
+        <div class="project-core-block">
+          <p class="project-overview-label">Core Elements</p>
+          <ul class="project-core-list project-05-core-list" aria-label="Project 05 core elements">
+            <li>Virtual repair workspace</li>
+            <li>Interactive VR exploration of objects</li>
+            <li>Basic user interactions and animated environment elements</li>
+          </ul>
         </div>
       </div>
-      <div class="project-05-media">
-        <div class="gallery-tile gallery-image-project-05-main gallery-tile-wide"></div>
-      </div>
+      <div class="project-05-media"><div class="gallery-tile gallery-image-project-05-main gallery-tile-wide"></div></div>
       <div class="project-05-detail-block">
         <div class="project-05-detail-images">
-          <figure class="project-05-detail-figure">
-            <div class="gallery-tile gallery-image-project-05-extra-01"></div>
-            <figcaption class="project-05-detail-caption">Storage components and tower details.</figcaption>
-          </figure>
-          <figure class="project-05-detail-figure">
-            <div class="gallery-tile gallery-image-project-05-extra-02"></div>
-            <figcaption class="project-05-detail-caption">Loose drive elements and suspended parts.</figcaption>
-          </figure>
-          <figure class="project-05-detail-figure">
-            <div class="gallery-tile gallery-image-project-05-extra-03"></div>
-            <figcaption class="project-05-detail-caption">Wall-mounted objects and observation cues.</figcaption>
-          </figure>
+          <figure class="project-05-detail-figure"><div class="gallery-tile gallery-image-project-05-extra-01"></div><figcaption class="project-05-detail-caption">Storage components and tower details.</figcaption></figure>
+          <figure class="project-05-detail-figure"><div class="gallery-tile gallery-image-project-05-extra-02"></div><figcaption class="project-05-detail-caption">Loose drive elements and suspended parts.</figcaption></figure>
+          <figure class="project-05-detail-figure"><div class="gallery-tile gallery-image-project-05-extra-03"></div><figcaption class="project-05-detail-caption">Wall-mounted objects and observation cues.</figcaption></figure>
         </div>
-        <aside class="detail-card project-05-detail-panel">
-          <h3>Scene Details</h3>
-          <p>Close-up views of repair-related objects, showing how scale, material contrast, and visual cues support object observation in the VR workspace.</p>
-        </aside>
+        <aside class="detail-card project-05-detail-panel"><h3>Scene Details</h3><p>Close-up views of repair-related objects, showing how scale, material contrast, and visual cues support object observation in the VR workspace.</p></aside>
       </div>
     </section>
 
-    <section class="about-section" id="about">
-      <p class="section-index">About</p>
-      <h2>About Me</h2>
-      <p class="about-copy">
-        这里可以替换成个人介绍、创作方向、学校或工作状态以及联系方式。当前页面是单页滚动作品集，适合从上到下完整浏览。
-      </p>
-    </section>
   </main>
+
   <script src="script.js"></script>
 </body>
 </html>
