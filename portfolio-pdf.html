@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chenyu Zhang / 张晨羽 - PDF Portfolio</title>
+  <meta name="description" content="PDF portfolio page for Chenyu Zhang, visual design, digital media, and interactive experience.">
+  <style>
+    :root {
+      --paper: #f7f7f4;
+      --ink: #171717;
+      --muted: #68655e;
+      --line: #d8d4c9;
+      --soft: #eeebe3;
+      --accent: #8f2f26;
+      --dark: #23221f;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: #d9d9d9;
+      color: var(--ink);
+      font-family: Inter, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+      letter-spacing: 0;
+    }
+
+    body {
+      margin: 0;
+      background: #d9d9d9;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .print-action {
+      position: fixed;
+      right: 24px;
+      top: 24px;
+      z-index: 10;
+      border: 1px solid rgba(23, 23, 23, 0.18);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--ink);
+      padding: 11px 18px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 12px 34px rgba(0, 0, 0, 0.16);
+      backdrop-filter: blur(12px);
+    }
+
+    .sheet {
+      position: relative;
+      width: 210mm;
+      height: 297mm;
+      margin: 18px auto;
+      overflow: hidden;
+      background: var(--paper);
+      page-break-after: always;
+      break-after: page;
+      box-shadow: 0 18px 70px rgba(0, 0, 0, 0.22);
+    }
+
+    .sheet:last-child {
+      page-break-after: auto;
+      break-after: auto;
+    }
+
+    .page-inner {
+      position: relative;
+      display: grid;
+      height: 100%;
+      padding: 18mm 17mm 14mm;
+      grid-template-rows: auto 1fr auto;
+      gap: 10mm;
+    }
+
+    .sheet-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10mm;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 5mm;
+      color: var(--muted);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+    }
+
+    .page-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--line);
+      padding-top: 4mm;
+      color: var(--muted);
+      font-size: 9px;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+    }
+
+    .cover {
+      background: #191817;
+      color: var(--white);
+    }
+
+    .cover .page-inner {
+      padding: 16mm;
+      gap: 8mm;
+    }
+
+    .cover-grid {
+      display: grid;
+      min-height: 0;
+      grid-template-columns: 1.12fr 0.88fr;
+      grid-template-rows: 1fr 0.92fr;
+      gap: 5mm;
+    }
+
+    .cover-hero {
+      position: relative;
+      grid-row: 1 / span 2;
+      overflow: hidden;
+      background: #2e2b27;
+    }
+
+    .cover-hero img {
+      filter: saturate(0.95) contrast(1.04);
+    }
+
+    .cover-hero::after {
+      position: absolute;
+      inset: 0;
+      content: "";
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.34));
+    }
+
+    .cover-card {
+      overflow: hidden;
+      background: #302e2a;
+    }
+
+    .cover-title {
+      align-self: end;
+      display: grid;
+      gap: 8mm;
+    }
+
+    .cover h1 {
+      max-width: 145mm;
+      margin: 0;
+      font-size: 44px;
+      line-height: 0.95;
+      font-weight: 760;
+      letter-spacing: 0;
+    }
+
+    .cover-role {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .cover-contact {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10mm;
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+      padding-top: 6mm;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 10px;
+      line-height: 1.6;
+    }
+
+    .overview-body {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 11mm;
+    }
+
+    .statement {
+      display: grid;
+      grid-template-columns: 0.72fr 1fr;
+      gap: 14mm;
+      align-items: end;
+    }
+
+    .statement h2,
+    .project-title h2 {
+      margin: 0;
+      font-size: 34px;
+      line-height: 1.02;
+      font-weight: 760;
+      letter-spacing: 0;
+    }
+
+    .statement p {
+      margin: 0;
+      color: #3b3934;
+      font-size: 13px;
+      line-height: 1.72;
+    }
+
+    .index-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 5mm;
+      align-content: end;
+    }
+
+    .index-card {
+      display: grid;
+      min-height: 42mm;
+      grid-template-columns: 25mm 1fr;
+      gap: 4mm;
+      border-top: 1px solid var(--line);
+      padding-top: 4mm;
+    }
+
+    .index-thumb {
+      overflow: hidden;
+      height: 25mm;
+      background: var(--soft);
+    }
+
+    .index-card h3 {
+      margin: 0 0 2mm;
+      font-size: 14px;
+      line-height: 1.15;
+    }
+
+    .index-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 9.5px;
+      line-height: 1.55;
+    }
+
+    .project-page {
+      background: var(--paper);
+    }
+
+    .project-page .page-inner {
+      gap: 7mm;
+    }
+
+    .project-body {
+      display: grid;
+      min-height: 0;
+      grid-template-rows: auto 1fr;
+      gap: 7mm;
+    }
+
+    .project-intro {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 11mm;
+      align-items: start;
+    }
+
+    .project-kicker {
+      margin: 0 0 4mm;
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .project-title h2 {
+      font-size: 31px;
+    }
+
+    .role-line {
+      margin: 5mm 0 0;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 1.55;
+      text-transform: uppercase;
+    }
+
+    .project-copy {
+      display: grid;
+      gap: 4mm;
+    }
+
+    .tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2mm;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tools li {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 1.8mm 3mm;
+      color: #403e39;
+      font-size: 9.5px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .description {
+      margin: 0;
+      color: #34312d;
+      font-size: 12px;
+      line-height: 1.63;
+    }
+
+    .image-board {
+      display: grid;
+      min-height: 0;
+      gap: 4mm;
+    }
+
+    .image-board figure {
+      position: relative;
+      overflow: hidden;
+      margin: 0;
+      background: var(--soft);
+    }
+
+    .image-board figcaption {
+      position: absolute;
+      left: 3mm;
+      bottom: 3mm;
+      max-width: calc(100% - 6mm);
+      background: rgba(20, 19, 17, 0.68);
+      color: #ffffff;
+      padding: 1.8mm 2.4mm;
+      font-size: 8.5px;
+      font-weight: 700;
+      line-height: 1.25;
+      backdrop-filter: blur(8px);
+    }
+
+    .board-feature {
+      grid-template-columns: 1.28fr 0.72fr;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    .board-feature .large {
+      grid-row: 1 / span 2;
+    }
+
+    .board-horizontal {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1.08fr 0.92fr;
+    }
+
+    .board-horizontal .wide {
+      grid-column: 1 / span 2;
+    }
+
+    .board-game {
+      grid-template-columns: 1.05fr 0.95fr;
+      grid-template-rows: 0.92fr 1.08fr;
+    }
+
+    .board-game .wide {
+      grid-column: 1 / span 2;
+    }
+
+    .board-graphic {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    .fit-contain img {
+      object-fit: contain;
+      padding: 4mm;
+      background: #f0eee8;
+    }
+
+    .dark-image img {
+      background: #171717;
+    }
+
+    .closing-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 4mm;
+      margin-top: 5mm;
+    }
+
+    .closing-strip figure {
+      overflow: hidden;
+      height: 42mm;
+      margin: 0;
+      background: var(--soft);
+    }
+
+    .note-box {
+      display: grid;
+      gap: 4mm;
+      align-self: end;
+      border-top: 1px solid var(--line);
+      padding-top: 5mm;
+    }
+
+    .note-box h3 {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.05;
+    }
+
+    .note-box p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.65;
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    @media print {
+      html,
+      body {
+        width: 210mm;
+        background: #ffffff;
+      }
+
+      .print-action {
+        display: none;
+      }
+
+      .sheet {
+        width: 210mm;
+        height: 297mm;
+        margin: 0;
+        box-shadow: none;
+        page-break-after: always;
+        break-after: page;
+      }
+
+      .sheet:last-child {
+        page-break-after: auto;
+        break-after: auto;
+      }
+    }
+
+    @media screen and (max-width: 900px) {
+      .sheet {
+        width: min(100vw, 210mm);
+        height: auto;
+        min-height: 140vw;
+        margin: 0 auto 16px;
+      }
+
+      .page-inner {
+        min-height: 140vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="print-action" href="javascript:window.print()" aria-label="Print or save this portfolio as a PDF">Print / Save as PDF</a>
+
+  <section class="sheet cover">
+    <div class="page-inner">
+      <div class="sheet-label">
+        <span>PDF Portfolio</span>
+        <span>Visual Design / Digital Media / Interactive Experience</span>
+      </div>
+      <div class="cover-grid" aria-label="Selected portfolio visuals">
+        <figure class="cover-hero"><img src="assets/project-01-main.png" alt="Cultural Research to AI Concept Video visual world concept"></figure>
+        <figure class="cover-card"><img src="assets/vr-final.jpg" alt="Morphing Mirror VR montage"></figure>
+        <figure class="cover-card"><img src="assets/project-04-main.png" alt="Virtual Album Space visual"></figure>
+      </div>
+      <div class="cover-title">
+        <div>
+          <h1>Chenyu Zhang / 张晨羽</h1>
+          <p class="cover-role">Visual Design / Digital Media / Interactive Experience</p>
+        </div>
+        <div class="cover-contact">
+          <span>hahaqiaowa@outlook.com</span>
+          <span>https://hahaqiaowa-hue.github.io/portfolio/</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sheet">
+    <div class="page-inner">
+      <div class="sheet-label">
+        <span>Profile</span>
+        <span>Channel operation / Visual content direction</span>
+      </div>
+      <main class="overview-body">
+        <section class="statement">
+          <h2>Visual designer working across digital image, interaction, and immersive media.</h2>
+          <p>I create visual systems for digital content, interactive scenes, AI-assisted imagery, and spatial experiences. My current portfolio includes cultural visual research, AR/VR interaction, mobile interface design, virtual exhibition design, and immersive learning environments. For a graphic design or visual design internship, I bring a mix of visual taste, practical production thinking, and the ability to turn research or experiential ideas into clear, engaging media assets.</p>
+        </section>
+        <section class="index-grid" aria-label="Portfolio contents">
+          <article class="index-card">
+            <figure class="index-thumb"><img src="assets/project-01-side-horse.png" alt="Cultural Research to AI Concept Video thumbnail"></figure>
+            <div><h3>01 Cultural Research to AI Concept Video</h3><p>Visual worldbuilding, AI-assisted concept workflow, cultural image direction, and VR interaction planning.</p></div>
+          </article>
+          <article class="index-card">
+            <figure class="index-thumb"><img src="assets/project-02-research-main.png" alt="AR Care Companion App Design thumbnail"></figure>
+            <div><h3>02 AR Care Companion App Design</h3><p>Mobile interface design, AR spatial interaction, user-flow structure, and digital care content.</p></div>
+          </article>
+          <article class="index-card">
+            <figure class="index-thumb"><img src="assets/project-03-main.png" alt="VR Experience thumbnail"></figure>
+            <div><h3>03 VR Experience</h3><p>Immersive identity experience with avatar staging, mirror interaction, and Unity development.</p></div>
+          </article>
+          <article class="index-card">
+            <figure class="index-thumb"><img src="assets/project-04-main.png" alt="Virtual Album Space thumbnail"></figure>
+            <div><h3>04 Virtual Album Space</h3><p>Spatial archive design, virtual exhibition layout, shared memory space, and interaction direction.</p></div>
+          </article>
+          <article class="index-card">
+            <figure class="index-thumb"><img src="assets/project-05-main.png" alt="VR Phone Repair thumbnail"></figure>
+            <div><h3>05 VR Phone Repair</h3><p>VR learning scene with object observation, workshop art direction, and guided interaction.</p></div>
+          </article>
+        </section>
+      </main>
+      <div class="page-footer"><span>Chenyu Zhang</span><span>02 / 07</span></div>
+    </div>
+  </section>
+
+  <section class="sheet project-page">
+    <div class="page-inner">
+      <div class="sheet-label"><span>Project 01</span><span>Cultural Research to AI Concept Video</span></div>
+      <main class="project-body">
+        <section class="project-intro">
+          <div class="project-title">
+            <p class="project-kicker">Visual world / AI-assisted workflow / VR direction</p>
+            <h2>Cultural Research to AI Concept Video</h2>
+            <p class="role-line">Role: Visual Design / Cultural Research / AI Visual Generation / Concept Video Design</p>
+          </div>
+          <div class="project-copy">
+            <ul class="tools">
+              <li>Cultural Research</li><li>Worldbuilding</li><li>AI Visual Generation</li><li>Concept Video</li><li>VR Planning</li>
+            </ul>
+            <p class="description">This project translates Tibetan cultural research into an AI-assisted concept video and immersive visual direction. I developed the image language from reference boards, route diagrams, storyboard frames, and scene studies, focusing on atmosphere, composition, color, and cultural motifs. The work presents horse racing, sutra printing, ritual spaces, and character moments as a coherent digital media system. For a visual design context, the project shows how research can become layout, mood, sequence, and content direction for video, exhibition, and interactive experience formats.</p>
+          </div>
+        </section>
+        <section class="image-board board-feature">
+          <figure class="large"><img src="assets/project-01-route-base.png" alt="Cultural Research to AI Concept Video visual route and scene map"><figcaption>Route map and scene structure</figcaption></figure>
+          <figure><img src="assets/project-01-culture-board.png" alt="Cultural Research to AI Concept Video cultural visual board"><figcaption>Culture and visual reference board</figcaption></figure>
+          <figure><img src="assets/story-04.png" alt="Cultural Research to AI Concept Video storyboard frame"><figcaption>Storyboard frame for visual sequence</figcaption></figure>
+        </section>
+      </main>
+      <div class="page-footer"><span>Visual Design / Digital Media</span><span>03 / 07</span></div>
+    </div>
+  </section>
+
+  <section class="sheet project-page">
+    <div class="page-inner">
+      <div class="sheet-label"><span>Project 02</span><span>AR Care Companion App Design</span></div>
+      <main class="project-body">
+        <section class="project-intro">
+          <div class="project-title">
+            <p class="project-kicker">Mobile interface / AR interaction / Care experience</p>
+            <h2>AR Care Companion App Design</h2>
+            <p class="role-line">Role: UX UI / Visual Design / AR Interaction / Digital Product Concept</p>
+          </div>
+          <div class="project-copy">
+            <ul class="tools">
+              <li>Mobile App</li><li>AR Interaction</li><li>UX UI</li><li>Voice Interaction</li><li>Family Care</li>
+            </ul>
+            <p class="description">AR Care Companion App Design presents a mobile care system through clear interface layouts, AR spatial scenes, and a soft digital visual language. I shaped the experience around older adults' daily awareness, decision-making, and family memory sharing, translating research into practical screens and visual flows. For a visual design portfolio, the project highlights hierarchy, mobile composition, icon-like interaction cues, and content organization. It also shows how AR can become approachable through familiar phone interfaces, warm imagery, and simple guided moments rather than complex technical presentation.</p>
+          </div>
+        </section>
+        <section class="image-board board-horizontal">
+          <figure class="wide fit-contain"><img src="assets/project-02-research-main.png" alt="AR Care Companion App research and user needs map"><figcaption>Research map and experience structure</figcaption></figure>
+          <figure class="fit-contain"><img src="assets/app-shot-01.png" alt="AR Care Companion App welcome screen"><figcaption>Mobile screen layout and visual tone</figcaption></figure>
+          <figure class="fit-contain"><img src="assets/App.png" alt="AR Care Companion spatial navigation interface"><figcaption>Spatial map and AR navigation view</figcaption></figure>
+        </section>
+      </main>
+      <div class="page-footer"><span>Mobile UI / AR Interaction</span><span>04 / 07</span></div>
+    </div>
+  </section>
+
+  <section class="sheet project-page">
+    <div class="page-inner">
+      <div class="sheet-label"><span>Project 03</span><span>VR Experience</span></div>
+      <main class="project-body">
+        <section class="project-intro">
+          <div class="project-title">
+            <p class="project-kicker">Morphing Mirror / Embodied interaction / Unity VR</p>
+            <h2>VR Experience</h2>
+            <p class="role-line">Role: Visual Design / Spatial Interaction / VR Experience Design</p>
+          </div>
+          <div class="project-copy">
+            <ul class="tools">
+              <li>VR</li><li>Spatial Interaction</li><li>Avatar Visual</li><li>Environment Setup</li><li>Interaction Design</li>
+            </ul>
+            <p class="description">VR Experience centers on Morphing Mirror, an immersive work where the viewer meets a changing avatar through a mirror-like interaction. I directed the visual tone, staged the environment, prepared the avatar presentation, and structured the VR experience so movement, reflection, and body feedback became part of the visual narrative. The project uses a restrained spatial setup to make the character transformation feel immediate and personal. It communicates immersive experience design through strong screenshots, clear staging, and a memorable visual concept.</p>
+          </div>
+        </section>
+        <section class="image-board board-horizontal">
+          <figure class="wide dark-image"><img src="assets/vr-final.jpg" alt="VR Experience final montage"><figcaption>Final VR key visual</figcaption></figure>
+          <figure><img src="assets/vr-shot-06.jpg" alt="VR Experience environment view"><figcaption>Environment staging and avatar placement</figcaption></figure>
+          <figure><img src="assets/project-03-extra-morphing.png" alt="VR Experience character model development"><figcaption>Avatar morphing model development</figcaption></figure>
+        </section>
+      </main>
+      <div class="page-footer"><span>Interactive Experience / Unity</span><span>05 / 07</span></div>
+    </div>
+  </section>
+
+  <section class="sheet project-page">
+    <div class="page-inner">
+      <div class="sheet-label"><span>Project 04</span><span>Virtual Album Space</span></div>
+      <main class="project-body">
+        <section class="project-intro">
+          <div class="project-title">
+            <p class="project-kicker">Spatial archive / Virtual exhibition / Shared memory</p>
+            <h2>Virtual Album Space</h2>
+            <p class="role-line">Role: Visual Design / Spatial Archive Design / Virtual Exhibition / Interaction Concept</p>
+          </div>
+          <div class="project-copy">
+            <ul class="tools">
+              <li>Spatial Archive</li><li>Virtual Exhibition</li><li>Memory Space</li><li>Shared Interaction</li>
+            </ul>
+            <p class="description">Virtual Album Space is a VR memory environment where family photos become part of a shared spatial archive. I focused on the visual layout of the room, the relationship between image surfaces and navigation, and the feeling of entering a personal exhibition. The project turns familiar photo albums into a more immersive digital media format, using scale, placement, and environmental details to guide attention. For design reviewers, it shows my ability to organize emotional content into a coherent space with clear visual hierarchy and interaction direction.</p>
+          </div>
+        </section>
+        <section class="image-board board-feature">
+          <figure class="large fit-contain"><img src="assets/project-04-main.png" alt="Virtual Album Space main visual"><figcaption>Main virtual album space</figcaption></figure>
+          <figure><img src="assets/project-04-extra-01.png" alt="Virtual Album Space room detail"><figcaption>Spatial memory-room detail</figcaption></figure>
+          <figure><img src="assets/project-04-extra-02.png" alt="Virtual Album Space environment view"><figcaption>Virtual exhibition environment</figcaption></figure>
+        </section>
+      </main>
+      <div class="page-footer"><span>Spatial Archive / Virtual Exhibition</span><span>06 / 07</span></div>
+    </div>
+  </section>
+
+  <section class="sheet project-page">
+    <div class="page-inner">
+      <div class="sheet-label"><span>Project 05</span><span>VR Phone Repair</span></div>
+      <main class="project-body">
+        <section class="project-intro">
+          <div class="project-title">
+            <p class="project-kicker">VR scene design / Learning content / Object interaction</p>
+            <h2>VR Phone Repair</h2>
+            <p class="role-line">Role: Visual Design / VR Interaction / Scene Layout</p>
+          </div>
+          <div class="project-copy">
+            <ul class="tools">
+              <li>VR Interaction</li><li>Scene Setup</li><li>Object Observation</li><li>Small Project</li>
+            </ul>
+            <p class="description">VR Phone Repair presents a repair workspace as a focused immersive learning scene. I led the scene layout, visual organization, and interaction flow, using tools, parts, wall objects, and workshop details to guide attention without overcrowding the view. The design goal was to make technical content approachable through strong staging, object scale, and visual cues. Instead of treating the work as a purely functional prototype, I shaped it as a clear digital environment that can be understood quickly through screenshots, short demos, and PDF portfolio presentation.</p>
+          </div>
+        </section>
+        <section class="image-board board-horizontal">
+          <figure class="wide"><img src="assets/project-05-main.png" alt="VR Phone Repair main scene"><figcaption>Main repair workspace</figcaption></figure>
+          <figure><img src="assets/project-05-extra-01.png" alt="VR Phone Repair storage components"><figcaption>Storage and component details</figcaption></figure>
+          <figure><img src="assets/project-05-extra-03.png" alt="VR Phone Repair wall-mounted objects"><figcaption>Observation cues and wall objects</figcaption></figure>
+        </section>
+        <section class="note-box">
+          <h3>Print / Save as PDF</h3>
+          <p>Open this page in a browser, press Ctrl + P, choose Save as PDF, and keep background graphics enabled for the best result. This file uses page breaks and A4 print CSS for clean export.</p>
+        </section>
+      </main>
+      <div class="page-footer"><span>hahaqiaowa@outlook.com</span><span>07 / 07</span></div>
+    </div>
+  </section>
+</body>
+</html>
